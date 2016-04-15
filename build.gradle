@@ -1,0 +1,18 @@
+buildscript {
+    dependencies {
+       	classpath files(file('plugins-lib/').listFiles())
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+defaultTasks 'distZip'
+mainClassName = 'test.Main'
+
+dependencies {
+	compile files(
+		file('lib/').listFiles()
+   	)
+}
+
